@@ -11,6 +11,7 @@ namespace ims\Services;
 
 use ims\Entities\Privilege;
 use ims\Entities\User;
+use ims\Entities\PartnerProfile;
 
 interface ServicesMethods
 {
@@ -25,6 +26,7 @@ interface ServicesMethods
     public function updateUser(User $user);
     public function removeUser(User $user);
 
+
     /**
      * Company Privilege
      * @return mixed
@@ -33,4 +35,14 @@ interface ServicesMethods
     public function getPrivilege(Privilege $privilege);
     public function getAllPrivilege();
     public function getLessPrivilege(Privilege $privilege);
+
+
+    /**
+     * PartnerProfile Table
+     * @return mixed
+     */
+    public function addUserProfile(PartnerProfile $partinerProfile);
+    public function getUserProfile(PartnerProfile $partinerProfile);
+    public function updateUserProfile(PartnerProfile $partinerProfile);
+    public function removeUserProfile(PartnerProfile $partinerProfile);
 }

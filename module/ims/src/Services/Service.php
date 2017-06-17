@@ -8,10 +8,10 @@
 
 namespace ims\Services;
 
-
 use Doctrine\ORM\EntityManager;
 use ims\Entities\Privilege;
 use ims\Entities\User;
+use ims\Entities\PartnerProfile;
 
 class Service implements ServicesMethods
 {
@@ -157,7 +157,7 @@ class Service implements ServicesMethods
         return $foundPrivileges;
     }
 
-    public function getLessPrivilege(Privilege $privilege)
+    public function getLessPrivilege(Privilege $partinerProfile)
     {
         $foundPrivileges = [];
         $allPrivileges = $this->EntityManager->getRepository(Privilege::class)->findAll();
@@ -178,5 +178,31 @@ class Service implements ServicesMethods
         return $foundPrivileges;
     }
 
+    public function addUserProfile(PartnerProfile $partinerProfile)
+    {
+        $userProfile->setId(null);
+        $userProfile->setIsActive(1);
+        $userProfile->setIsDeleted(0);
+        $userProfile->setCreatedDate(new \DateTime('now'));
+        $userProfile->setUpdatedDate(new \DateTime('now'));
+        $this->EntityManager->persist($userProfile);
+        $this->EntityManager->flush();
+        if($userProfile->getId()){
+            return $userProfile;
+        }else{
+            return null;
+        }
+
+    }
+
+    public function getUserProfile(PartnerProfile $partinerProfile)
+    {
+    }
+    public function updateUserProfile(PartnerProfile $partinerProfile)
+    {
+    }
+    public function removeUserProfile(PartnerProfile $partinerProfile)
+    {
+    }
 
 }

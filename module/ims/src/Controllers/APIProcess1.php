@@ -10,6 +10,7 @@ namespace ims\Controllers;
 
 use ims\Entities\Privilege;
 use ims\Entities\User;
+use ims\Entities\PartnerProfile;
 use ims\Services\Service;
 
 class Responses {
@@ -43,9 +44,21 @@ class RequestFormat extends BasicEnum {
 abstract class AvailableServices extends BasicEnum {
     const AUTHENTICATE = 'log_in';
     const REGISTER = 'register';
+    const PARTNER_REGISTER = 'partner_register';
+
 }
 class FORMAT_ByItemID extends BasicEnum {
     const ITEM_ID = 'item_id';
+}
+class FORMAT_PARTNER__REGISTER extends BasicEnum {
+    const firstName = 'firstName';
+    const lastName = 'lastName';
+    const age = 'age';
+    const sex = 'sex';
+    const jobType = 'lastName';
+    const qualification = 'qualification';
+    const educationalLevel = 'educationalLevel';
+
 }
 class FORMAT_REGISTER extends BasicEnum {
     const USER_NAME = 'user_name';
