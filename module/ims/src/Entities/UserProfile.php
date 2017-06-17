@@ -7,14 +7,19 @@
  */
 
 namespace ims\Entities;
-
-
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="users_profile")
+ */
 class UserProfile
-    /**
-     * @ORM\Entity
-     * @ORM\Table(name="serProfile")
-     */
 {
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    protected $id;
     protected $firstName;
     protected $lastName;
 }

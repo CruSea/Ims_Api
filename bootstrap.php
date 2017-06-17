@@ -17,10 +17,10 @@ $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/module/
 //$config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
 // database configuration parametersgit
 $conn = array(
-    'dbname' => 'ims',
-    'user' => 'root',
-    'password' => 'root',
-    'host' => '127.0.0.1:3306',
+    'dbname' => 'MembersManagement',
+    'user' => 'bengeos',
+    'password' => 'passben',
+    'host' => '127.0.0.1:8889',
     'driver' => 'pdo_mysql',
     'charset' => 'utf8',
     'driverOptions' => array(
